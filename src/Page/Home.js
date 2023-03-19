@@ -5,10 +5,12 @@ import SwiperBanner from "../Component/Swiper.js"
 import Content from "../Component/Content.js"
 import About from "../Component/About.js"
 import Footer from "../Component/Footer.js"
+import Customer from "../Component/Customer"
 import BtnScrollTop from "../Component/BtnScrollTop.js"
+ import {useNavigate} from "react-router-dom"
 export default function Home(){
   const [scroll,setScroll]=useState(false)
-  
+   const nvgt=useNavigate()
   useEffect(()=>{
     window.addEventListener("scroll",()=>{
       if(window.scrollY>150){
@@ -25,6 +27,9 @@ export default function Home(){
       behavior:"smooth"
     })
   }
+  const handleCustomer=()=>{
+    nvgt("/contact")
+  }
   return (
     <div className="bg-second h-full w-full">
       <Navbar/>
@@ -36,7 +41,7 @@ export default function Home(){
       {
         scroll && <BtnScrollTop event={handleScrollTop}/>
       }
-    
+    <Customer event={handleCustomer}/>
     </div>
     )
 }

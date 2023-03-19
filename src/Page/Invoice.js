@@ -4,8 +4,11 @@ import Footer from "../Component/Footer.js"
 import Swal from 'sweetalert2'
 import {useState} from "react"
 import CardInvoice from "../Component/CardInvoice.js"
+import {useNavigate} from "react-router-dom"
+import Customer from "../Component/Customer"
 export default function Invoice(){
   const [input,setInput]=useState("")
+  const nvgt=useNavigate()
   const handleCheck=()=>{
     if(input.length > 7){
       Swal.fire(
@@ -23,6 +26,9 @@ export default function Invoice(){
   const handleChange=({target})=>{
     setInput(target.value)
   }
+  const handleCustomer=()=>{
+    nvgt("/contact")
+  }
   return (
     <div className="bg-second h-full md:h-screen w-screen md:flex md:justify-between md:flex-col">
     <Navbar/>
@@ -35,6 +41,7 @@ export default function Invoice(){
      <div className="hidden md:block md:h-[150px]"></div>
     <About/>
     <Footer/>
+     <Customer event={handleCustomer}/>
     </div>
     )
 }

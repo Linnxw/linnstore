@@ -4,9 +4,11 @@ import Footer from "../Component/Footer"
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2'
+import {useNavigate} from "react-router-dom"
+import Customer from "../Component/Customer"
 export default function Contact(){
 const form = useRef();
-
+const nvgt=useNavigate()
   const sendEmail = (e) => {
     e.preventDefault();
 
@@ -26,7 +28,9 @@ const form = useRef();
           console.log(error.text);
       });
   };
-  
+const handleCustomer=()=>{
+    nvgt("/contact")
+  }
   return (
     <div className="bg-second w-screen h-full md:h-screen md:relative">
     <Navbar/>
@@ -63,7 +67,7 @@ const form = useRef();
     <div className="md:absolute md:bottom-0">
       <Footer/>
     </div>
-
+     <Customer event={handleCustomer}/>
     </div>
     )
 }
