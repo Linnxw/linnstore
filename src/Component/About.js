@@ -1,5 +1,7 @@
 import {IoIosArrowForward} from "react-icons/io"
 import {useNavigate} from "react-router-dom"
+import github from "../Aset/github.png"
+import tiktok from "../Aset/tiktok.png"
 export default function About(){
   const nvgt=useNavigate()
   return (
@@ -19,6 +21,21 @@ export default function About(){
           <div className="text-[#B09872] flex items-center mt-2" onClick={()=>nvgt("/invoice")}><IoIosArrowForward/><p className="text-[#FEFEFE]">Search</p></div>
           <div className="text-[#B09872] flex items-center mt-2" onClick={()=>nvgt("/contact")}><IoIosArrowForward/><p className="text-[#FEFEFE]">Contact</p></div>
        </div>
+      <div className="my-4 text-[1em] font-semibold">
+       <div>
+        <p className="text-xl text-[#FEFEFE]">Social Media</p>
+       </div>
+      <div className="ml-2">
+         <div className="text-[#B09872] flex items-center mt-2" onClick={()=>nvgt("/")}>
+         <img src={github} alt="github" className="h-5"/>
+         <p className="mx-1 text-[#FEFEFE]"><a href="https://github.com/Linnxw" target="_blank">GitHub</a></p>
+         </div>
+          <div className="text-[#B09872] flex items-center mt-2" onClick={()=>nvgt("/")}>
+         <img src={tiktok} alt="github" className="h-5"/>
+         <p className="mx-1 text-[#FEFEFE]"><a href="https://tiktok.com/@dhixvcikwvximcb" target="_blank">Tiktok</a></p>
+         </div>
+       </div>
+      </div>
       </div>
     </div>
     )
