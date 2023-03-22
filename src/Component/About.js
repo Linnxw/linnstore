@@ -28,11 +28,11 @@ export default function About(){
       <div className="ml-2">
          <div className="text-[#B09872] flex items-center mt-2" onClick={()=>nvgt("/")}>
          <img src={github} alt="github" className="h-5"/>
-         <p className="mx-1 text-[#FEFEFE]"><a href="https://github.com/Linnxw" target="_blank">GitHub</a></p>
+         <p className="mx-1 text-[#FEFEFE]"><a href="https://github.com/Linnxw" target="_blank" rel="noopener noreferrer">GitHub</a></p>
          </div>
           <div className="text-[#B09872] flex items-center mt-2" onClick={()=>nvgt("/")}>
          <img src={tiktok} alt="github" className="h-5"/>
-         <p className="mx-1 text-[#FEFEFE]"><a href="https://tiktok.com/@dhixvcikwvximcb" target="_blank">Tiktok</a></p>
+         <p className="mx-1 text-[#FEFEFE]"><a href="https://tiktok.com/@dhixvcikwvximcb" tatget="_blank" rel="noopener noreferrer">Tiktok</a></p>
          </div>
        </div>
       </div>
