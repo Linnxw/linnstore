@@ -12,7 +12,7 @@ export default function Navbar(){
  
   return(
     <>
-    <div className="h-[60px] w-screen flex justify-between items-center bg-[#212529] font-inter p-3 md:h-[80px] z-22 mb-[15px] shadow-lg shadow-[#1F2227]">
+    <div className="h-[60px] w-screen flex justify-between items-center bg-[#212529] font-inter p-3 md:h-[80px] z-50 relative mb-[15px] shadow-lg shadow-[#1F2227]">
     <div>
       <h1 className="text-[#B09872] font-semibold text-2xl">Linnxw</h1>
     </div>
@@ -39,7 +39,7 @@ export default function Navbar(){
            </div>
       </div>
     </div>
-    <div className={toggle ? "absolute h-[100px] w-screen flex flex-col justify-around font-inter pl-3 bg-primary text-slate-300 top-[60px] text-md z-20" :"absolute h-[100px] w-screen font-inter flex flex-col justify-around pl-8 bg-slate-800 -top-[100px] -z-2 text-md"}>
+    <div className={`absolute h-[100px] w-screen flex flex-col justify-around font-inter pl-3 bg-primary text-slate-300 ${toggle ? "top-[60px] opacity-100":"-top-[100px] opacity-0"} text-md z-20 transition-all duration-300 ease-in`}>
      <div className="flex items-center cursor-pointer hover:text-slate-200" onClick={()=>nvgt("/")}>
       <BiHomeAlt/>
       <p className="mx-1">Home</p>
